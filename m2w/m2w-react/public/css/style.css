@@ -1,0 +1,229 @@
+/* Header styles */
+html,body{
+    background-color: #0942B2;
+}
+
+html {
+    height: 100%;
+    background-color:#0942B2;
+    font-family: Cambria;
+}
+
+#navbar{
+    background-color: #1c2222;
+    font-family: Cambria;
+    color: white;
+}
+
+#navbar2{
+    background-color: #1c2222;
+    font-family: Cambria;
+    color: white;
+}
+
+#search-bar{
+    display:"inline-block";
+}
+
+/* Navigation styles */
+
+#input-group-dropdown-1{
+    background-color:grey;
+    color:white;
+}
+
+/* Footer styles */
+footer{
+    bottom:0;
+    width: 100%;
+    margin-top: 5rem;
+    background-color: #1c2222;
+    background-size: cover;
+    font-family: Cambria;
+    color:white;
+}
+
+.app-div{
+    background-color: #0942B2;
+}
+
+#footer-container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.login-form{
+    color:white;
+    width:100%;
+    max-width: 330px;
+    padding:15px;
+    margin:auto;
+    margin-top: 3rem;
+    height:100%;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+.login-div{
+    background-color: #0942B2;
+}
+
+#navigation-nav-links.active{
+    background-color: #1c2222;
+}
+
+#search-container, #search-div{
+    background-color: #0942B2;
+}
+
+.card-div{
+
+}
+
+.popular-movies > .row{
+    overflow-x: auto;
+    flex-wrap: nowrap;
+}
+
+.listItem{
+    width: fit-content;
+    height: fit-content;
+    background-color: white;
+    margin-right: 5px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.listItem:hover .poster{
+    height: 325px;
+    width: 230px;
+}
+
+.icons{
+    color:white;
+    background-color: #0942B2;
+    display: none;
+}
+
+.itemInfoTop, .rating{
+    color:white;
+    background-color: #0942B2;
+    overflow:hidden; 
+    white-space:nowrap; 
+    text-overflow:ellipsis;
+    width: 170px;
+    display: none;
+}
+
+.listItem:hover .icons{
+    display: block;
+}
+
+.listItem:hover .itemInfoTop{
+    width: 230px;
+    display: block;
+}
+
+.listItem:hover .rating{
+    width: 230px;
+    display: block;
+}
+
+.list{
+    margin-top: 2rem;
+    width: 100%;
+    color: white;
+    background-color: #0942B2;
+}
+
+.listTitle{
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 50px;
+}
+
+.containerr{
+    margin-left:50px;
+    display: flex;
+    width: max-content;
+    margin-top: 10px;
+    /* przesuwanie się pojemnika */
+    transform: translateX(0px);
+    /* animacja przejścia */
+    transition: all 1s ease;
+}
+
+.home{
+    background-color: #0942B2;
+    overflow: hidden;
+}
+
+/* Jeśli strzałki są w pozycji absolute to kontener-rodzic powinien być w pozycji relative */
+.wrapper{
+    position: relative;
+}
+
+.arrow-back{
+    width: 100px;
+    height: 100%;
+    background-color: rgb(31, 31, 31, 0.5);
+    color: white;
+    position: absolute;
+    left: 0;
+    z-index: 99;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    cursor: pointer;
+    transform: scale(2.5);
+}
+
+.arrow-forward{
+    width: 50px;
+    height: 100%;
+    background-color: rgb(31, 31, 31, 0.5);
+    color: white;
+    position: absolute;
+    right: 0;
+    z-index: 99;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    cursor: pointer;
+    transform: scale(2.5);
+}
+
+.poster{
+    height: 240px;
+    width: 170px;
+    object-fit: cover;
+}
+
+.category-img{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+}
+
+.category-listItem{
+    width: fit-content;
+    height: fit-content;
+    background-color: white;
+    margin-right: 5px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.category-itemInfoTop{
+    text-align: center;
+    color:white;
+    background-color: #0942B2;
+    overflow:hidden; 
+    white-space:nowrap; 
+    text-overflow:ellipsis;
+    width: 150px;
+}
+
+@media only screen and (max-width: 768px) {
+    
+  }
