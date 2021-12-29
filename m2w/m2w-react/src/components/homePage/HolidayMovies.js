@@ -10,7 +10,7 @@ const HolidayMovies = () => {
     const getTitleRequest = async () => {
 
         const api_key = "k_8v24mym4";
-        const url = `https://imdb-api.com/en/API/IMDbList/k_8v24mym4/ls000096828`
+        const url = `https://imdb-api.com/en/API/IMDbList/${api_key}/ls000096828`
 
         const response = await fetch(url);
         const responseJson = await response.json();
@@ -46,7 +46,7 @@ const HolidayMovies = () => {
     }
 
     return (
-        <div className="list">
+        <div className="list-holiday">
             <span className="listTitle">Top 100 holiday movies</span>
             <div className="wrapper">
                 <ArrowBackIosOutlinedIcon
