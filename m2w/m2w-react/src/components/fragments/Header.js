@@ -49,10 +49,10 @@ function Header() {
                         </Navbar.Text> */}
                     <Col xs={12} lg={2} className="d-flex justify-content-around">
                         <Navbar.Text>
-                            <Link to="/login">Sign in</Link>
+                            <Link to="/login" style={{ textDecoration: 'none', color: "white", fontSize: "large" }}><span className="header-link">Login</span></Link>
                         </Navbar.Text>
                         <Navbar.Text>
-                            <Link to="/register">Register</Link>
+                            <Link to="/register" style={{ textDecoration: 'none', color: "white", fontSize: "large" }}><span className="header-link">Register</span></Link>
                         </Navbar.Text>
                     </Col>
                 </Navbar>
@@ -64,12 +64,10 @@ function Header() {
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse className="d-flex justify-content-center" id="responsive-navbar-nav">
                             <Nav fill variant="tabs" defaultActiveKey="/home" >
-                                <Nav.Link id="navigation-nav-links"><Link to="/films">Films</Link></Nav.Link>
-                                <Nav.Link id="navigation-nav-links"><Link to="/series">Series</Link></Nav.Link>
-                                <Nav.Link id="navigation-nav-links"><Link to="/actors">Actors</Link></Nav.Link>
-                                <Nav.Link id="navigation-nav-links"><Link to="/rankings">Rankings</Link></Nav.Link>
-                                <Nav.Link id="navigation-nav-links"><Link to="/news">News</Link></Nav.Link>
-                                <Nav.Link id="navigation-nav-links"><Link to="/premiers">Premiers</Link></Nav.Link>
+                                <Nav.Link id="navigation-nav-links"><Link to="/films" style={{ textDecoration: 'none', color: "white" }}><span className="nav-span">Films</span></Link></Nav.Link>
+                                <Nav.Link id="navigation-nav-links"><Link to="/series" style={{ textDecoration: 'none', color: "white" }}><span className="nav-span">Series</span></Link></Nav.Link>
+                                <Nav.Link id="navigation-nav-links"><Link to="/award_winners" style={{ textDecoration: 'none', color: "white" }}><span className="nav-span">Award winners</span></Link></Nav.Link>
+                                <Nav.Link id="navigation-nav-links"><Link to="/top100s" style={{ textDecoration: 'none', color: "white" }}><span className="nav-span">Top 100's</span ></Link></Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>

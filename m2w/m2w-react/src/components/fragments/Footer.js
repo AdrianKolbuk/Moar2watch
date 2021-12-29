@@ -4,7 +4,7 @@ import { Navbar, Nav, Container, Row } from 'react-bootstrap'
 
 function Footer() {
     return (
-        <footer >
+        <footer className="footer py-3 bg-dark">
             <Navbar id="footer-navbar" bg="Dark" variant="dark" expand="lg">
                 <Container id="footer-container">
                     <Nav id="footer-nav">
