@@ -1,6 +1,7 @@
 import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Button, Form, FormGroup, FormLabel, InputGroup, Label } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 function LoginForm() {
     return (
@@ -35,8 +36,14 @@ function LoginForm() {
                 </div>
 
                 <p className="text-center my-2">
-                    Or continue with your google account
+                    or
                 </p>
+
+                <Link to="/register" style={{ textDecoration: 'none', textAlign: "center", width: "fit-content" }}>
+                    <p className="register-p my-2">
+                        Register
+                    </p>
+                </Link>
 
             </Form>
         </div>
