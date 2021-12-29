@@ -8,7 +8,7 @@ const SearchResult = () => {
     const [searchValue, setSearchValue] = useState('')
     const getTitleRequest = async () => {
 
-        const url = 'https://imdb-api.com/en/API/SearchTitle/k_8v24mym4/${}}'
+        const url = 'https://imdb-api.com/en/API/SearchTitle/k_8v24mym4/game';
 
         const response = await fetch(url);
         const responseJson = await response.json();
@@ -24,7 +24,7 @@ const SearchResult = () => {
 
     return (
         <Container id="search-container" fluid>
-            <Row>
+            <Row className="px-5">
                 <SearchTitleList titles={titles} />
             </Row>
         </Container>

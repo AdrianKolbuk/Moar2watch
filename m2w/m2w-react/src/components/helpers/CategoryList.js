@@ -29,7 +29,7 @@ const CategoryList = () => {
 
 
     return (
-        <div className="list">
+        <div className="list pb-3">
             <span className="listTitle">Categories</span>
             <div className="wrapper">
                 <ArrowBackIosOutlinedIcon
@@ -40,7 +40,7 @@ const CategoryList = () => {
                 />
                 <div className="containerr" ref={listRef}>
 
-                    <Link to="/films/drama">
+                    <Link to="/films/drama" style={{ textDecoration: 'none', color: "white" }}>
                         <div className='category-listItem'>
                             <img className="category-img" src="/img/obyczajowy.png" />
                             <div className='itemInfo'>
@@ -51,7 +51,7 @@ const CategoryList = () => {
                         </div>
                     </Link>
 
-                    <Link to="/films/scifi_fantasy">
+                    <Link to="/films/scifi_fantasy" style={{ textDecoration: 'none', color: "white" }}>
                         <div className='category-listItem'>
                             <img className="category-img" src="/img/sci-fi_fantasy.png" />
                             <div className='itemInfo'>
@@ -62,7 +62,7 @@ const CategoryList = () => {
                         </div>
                     </Link>
 
-                    <Link to="/films/thriller_horror">
+                    <Link to="/films/thriller_horror" style={{ textDecoration: 'none', color: "white" }}>
                         <div className='category-listItem'>
                             <img className="category-img" src="/img/Thriller_horror.png" />
                             <div className='itemInfo'>
@@ -73,7 +73,7 @@ const CategoryList = () => {
                         </div>
                     </Link>
 
-                    <Link to="/films/action_adventure">
+                    <Link to="/films/action_adventure" style={{ textDecoration: 'none', color: "white" }}>
                         <div className='category-listItem'>
                             <img className="category-img" src="/img/akcja_przygodowy.png" />
                             <div className='itemInfo'>
@@ -84,7 +84,7 @@ const CategoryList = () => {
                         </div>
                     </Link>
 
-                    <Link to="/films/romance">
+                    <Link to="/films/romance" style={{ textDecoration: 'none', color: "white" }}>
                         <div className='category-listItem'>
                             <img className="category-img" src="/img/romantyczne.png" />
                             <div className='itemInfo'>
@@ -95,7 +95,7 @@ const CategoryList = () => {
                         </div>
                     </Link>
 
-                    <Link to="/films/comedy">
+                    <Link to="/films/comedy" style={{ textDecoration: 'none', color: "white" }}>
                         <div className='category-listItem'>
                             <img className="category-img" src="/img/komedia.png" />
                             <div className='itemInfo'>
@@ -106,7 +106,7 @@ const CategoryList = () => {
                         </div>
                     </Link>
 
-                    <Link to="/films/criminal">
+                    <Link to="/films/criminal" style={{ textDecoration: 'none', color: "white" }}>
                         <div className='category-listItem'>
                             <img className="category-img" src="/img/kryminalny.png" />
                             <div className='itemInfo'>
@@ -117,7 +117,7 @@ const CategoryList = () => {
                         </div>
                     </Link>
 
-                    <Link to="/films/family">
+                    <Link to="/films/family" style={{ textDecoration: 'none', color: "white" }}>
                         <div className='category-listItem'>
                             <img className="category-img" src="/img/familijne.png" />
                             <div className='itemInfo'>
@@ -128,7 +128,7 @@ const CategoryList = () => {
                         </div>
                     </Link>
 
-                    <Link to="/films/documentary">
+                    <Link to="/films/documentary" style={{ textDecoration: 'none', color: "white" }}>
                         <div className='category-listItem'>
                             <img className="category-img" src="/img/dokumentalny.png" />
                             <div className='itemInfo'>
@@ -138,7 +138,8 @@ const CategoryList = () => {
                             </div>
                         </div>
                     </Link>
-                    <Link to="/films/musical">
+
+                    <Link to="/films/musical" style={{ textDecoration: 'none', color: "white" }}>
                         <div className='category-listItem'>
                             <img className="category-img" src="/img/muzyczny.png" />
                             <div className='itemInfo'>
