@@ -12,7 +12,7 @@ import HomePage from '../homePage/HomePage';
 
 function FilmsPage() {
     return (
-        <div className="home">
+        <div className="filmsPage">
             <CategoryList />
             <Outlet />
         </div>
