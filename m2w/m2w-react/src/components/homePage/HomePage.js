@@ -5,15 +5,17 @@ import PopularTvShows from "./PopularTvShows"
 import SuperHeroMovies from "./SuperHeroMovies"
 import HolidayMovies from "./HolidayMovies"
 
-function HomePage() {
-    return (
-        <div className="home">
-            <PopularMovies />
-            <PopularTvShows />
-            <SuperHeroMovies />
-            <HolidayMovies />
-        </div>
-    )
+class HomePage extends React.Component {
+    render() {
+        return (
+            <div className="home">
+                <PopularMovies />
+                <PopularTvShows />
+                <SuperHeroMovies />
+                <HolidayMovies />
+            </div>
+        )
+    }
 }
 
 export default HomePage

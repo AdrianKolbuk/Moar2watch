@@ -69,8 +69,9 @@ footer{
 
 .login-div{
     background-color: #0942B2;
-    padding-top: 10rem;
-    padding-bottom: 10rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    min-height: 80vh;
 }
 
 #navigation-nav-links.active{
@@ -239,8 +240,15 @@ footer{
 }
 
 .register-p{
+    border: none;
+    border-radius: 5px;
+    background-color: #121313;
     color: white;
+    text-decoration: none;
+    text-align: center;
     font-size: large;
+    padding: 0.5rem 1rem;
+    width: fit-content;
 }
 
 .register-p:hover{
@@ -261,11 +269,35 @@ footer{
 .filmsPage{
     background-color: #0942B2;
     overflow: hidden;
-    min-height: 100vh;
+    min-height: 80vh;
 }
 
 .nav-span{
     font-size: large;
+}
+
+.form-button-submit{
+    border: none;
+    border-radius: 5px;
+    background-color: #121313;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: large;
+    padding: 0.5rem 1rem;
+    width: 100%;
+}
+
+.form-button-submit:hover{
+    background-color: rgb(48, 48, 48);
+}
+
+.errors-text{
+    font-size: medium;
+    font-weight: bold;
+    color: rgb(255, 80, 80);
+    margin: 0;
+    padding: 0;
 }
 
 @media only screen and (max-width: 768px) {

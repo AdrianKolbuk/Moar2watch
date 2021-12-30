@@ -39,11 +39,13 @@ function LoginForm() {
                     or
                 </p>
 
-                <Link to="/register" style={{ textDecoration: 'none', textAlign: "center", width: "fit-content" }}>
-                    <p className="register-p my-2">
-                        Register
-                    </p>
-                </Link>
+                <div className="d-flex justify-content-center">
+                    <Link to="/register" style={{ textDecoration: 'none', textAlign: "center", width: "fit-content" }}>
+                        <p className="register-p my-2">
+                            Register
+                        </p>
+                    </Link>
+                </div>
 
             </Form>
         </div>

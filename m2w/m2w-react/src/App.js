@@ -3,7 +3,7 @@ import Header from './components/fragments/Header';
 import React, { useReducer } from 'react';
 import SearchResult from './components/search/SearchResult';
 import Footer from './components/fragments/Footer';
-import LoginForm from './components/form/loginForm';
+import LoginForm from './components/form/LoginForm';
 import HomePage from './components/homePage/HomePage';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {
@@ -38,6 +38,7 @@ import SeriesMusicalTitleList from './components/seriesPage/MusicalTitleList';
 import AwardWinnersPage from './components/awardWinnersPage/AwardWinnersPage';
 
 import Top100sPage from './components/top100sPage/Top100sPage';
+import RegistrationForm from './components/form/RegistrationForm';
 
 function App() {
   return (
@@ -46,7 +47,8 @@ function App() {
       <main>
         <Routes>
           <Route exact path="/login" element={<LoginForm />} />
-          <Route exact path="/home" element={<HomePage />} />
+          <Route exact path="/register" element={<RegistrationForm />} />
+          <Route exact path="/" element={<HomePage />} />
           <Route exact path="/search" element={<SearchResult />} />
           <Route exact path="/films" element={<FilmsPage />}>
             <Route exact path="/films/drama" element={<DramaTitleList />} />

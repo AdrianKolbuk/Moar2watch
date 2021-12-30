@@ -1,6 +1,7 @@
 const User = require("../../model/sequelize/User");
 const TitleLike = require("../../model/sequelize/TitleLike");
 const TitleWatchlist = require("../../model/sequelize/TitleWatchlist");
+const authUtil = require('../../util/authUtils');
 
 exports.getUsers = () => {
     return User.findAll();
@@ -25,7 +26,7 @@ exports.createUser = (newUserData) => {
     return User.create({
         nickname: newUserData.nickname,
         email: newUserData.email,
-        password: newUserData.password
+        password: authUtil.hashPassword(newUserData.password)
     });
 };
 

@@ -1,0 +1,1 @@
+module.exports = { secret: 'm2w_development_secret_key' }

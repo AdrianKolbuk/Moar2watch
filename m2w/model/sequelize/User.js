@@ -46,7 +46,7 @@ const User = sequelize.define('User', {
                 msg: "Field is required"
             },
             len: {
-                args: [2, 60],
+                args: [5, 60],
                 msg: "Field must contain from 5 to 60 characters"
             },
         }
