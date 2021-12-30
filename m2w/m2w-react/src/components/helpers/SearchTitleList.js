@@ -6,7 +6,7 @@ const SearchTitleList = (props) => {
     return (
         <>
             {props.titles.map((title, index) => (
-                <Col xs={12} sm={6} md={4} xl={2} className="d-flex justify-content-center my-3">
+                <Col xs={6} sm={6} md={4} xl={1} className="d-flex justify-content-center my-3">
                     <Card style={{ width: '12rem' }}>
                         <Card.Img variant="top" src={title.image} alt="title" />
                         <Card.Body>

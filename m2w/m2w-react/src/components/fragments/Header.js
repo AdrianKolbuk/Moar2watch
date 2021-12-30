@@ -1,6 +1,6 @@
 import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Navbar, Nav, Container, FormControl, Form, Button, InputGroup, Dropdown, DropdownButton, Row, Col } from 'react-bootstrap'
+import { Navbar, Nav, Container, FormControl, InputGroup, Dropdown, DropdownButton, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 function Header() {
@@ -10,15 +10,17 @@ function Header() {
                 <Navbar id="navbar" bg="Dark" variant="dark" expand="lg">
 
                     <Col xs={12} lg={2} className="d-flex justify-content-center">
-                        <Navbar.Brand href="/home">
-                            <img
-                                alt=""
-                                src="/img/logo_m2w.png"
-                                width="70"
-                                height="70"
-                                className="d-inline-block align-middle"
-                            />{' '}
-                            Moar2watch
+                        <Navbar.Brand>
+                            <Link to="/" style={{ textDecoration: 'none', color: "white" }}>
+                                <img
+                                    alt=""
+                                    src="/img/logo_m2w.png"
+                                    width="70"
+                                    height="70"
+                                    className="d-inline-block align-middle"
+                                />{' '}
+                                Moar2watch
+                            </Link>
                         </Navbar.Brand>
                     </Col>
 
