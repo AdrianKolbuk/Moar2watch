@@ -45,7 +45,7 @@ exports.deleteUser = (userId) => {
 };
 
 exports.findByEmail = (email) => {
-    return Employee.findOne({
+    return User.findOne({
         where: { email: email }
     });
 }

@@ -2,8 +2,13 @@ import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Navbar, Nav, Container, FormControl, InputGroup, Dropdown, DropdownButton, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import { isAuthenticated } from '../../helpers/authHelper'
 
 function Header() {
+    const loginLogoutLink = isAuthenticated() ?
+        <button onClick={this.props.handleLogout}>Logout</button> :
+        <Link to="/login" style={{ textDecoration: 'none', color: "white", fontSize: "large" }}><span className="header-link">Login</span></Link>
+
     return (
         <Container id="header" fluid>
             <Row>
@@ -51,7 +56,7 @@ function Header() {
                         </Navbar.Text> */}
                     <Col xs={12} lg={2} className="d-flex justify-content-around">
                         <Navbar.Text>
-                            <Link to="/login" style={{ textDecoration: 'none', color: "white", fontSize: "large" }}><span className="header-link">Login</span></Link>
+                            {loginLogoutLink}
                         </Navbar.Text>
                         <Navbar.Text>
                             <Link to="/register" style={{ textDecoration: 'none', color: "white", fontSize: "large" }}><span className="header-link">Register</span></Link>

@@ -1,7 +1,7 @@
 import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Button, Form, FormGroup } from 'react-bootstrap'
-import { Link, Navigate } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import { checkRequired, checkTextLengthRange, checkEmail, checkConfirmPassword } from '../../helpers/validationCommon'
 import { addUserApiCall } from '../../apiCalls/userApiCalls'
 import FormInput from '../form/FormInput'
@@ -164,7 +164,7 @@ class RegistrationForm extends React.Component {
             const notice = "User registration succesful"
 
             return (
-                <Navigate to={{
+                <Redirect to={{
                     pathname: "/",
                     state: {
                         notice: notice
@@ -246,29 +246,9 @@ class RegistrationForm extends React.Component {
                     </FormGroup>
 
                     <RegisterFormButton
-                        error={globalErrorMessage}
+                        error={globalErrorMessage} submitButtonLabel="Register"
                     />
 
-                    {/* <FormGroup className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Nickname</Form.Label>
-                        <Form.Control type="text" placeholder="Enter nickname" />
-                    </FormGroup>
-
-                    <FormGroup className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" />
-                    </FormGroup>
-
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" />
-                    </Form.Group>
-
-                    <div className="d-grid gap-2">
-                        <Button className="btn-dark btn-block" size="lg" type="submit">
-                            Register
-                        </Button>
-                    </div> */}
 
                     <p className="text-center my-2">
                         Already have an account?

@@ -5,7 +5,7 @@ import {
     BrowserRouter,
     Routes,
     Route,
-    Outlet
+
 } from 'react-router-dom'
 
 
@@ -13,7 +13,7 @@ function SeriesPage() {
     return (
         <div className="filmsPage">
             <SeriesCategoryList />
-            <Outlet />
+
         </div>
     )
 }

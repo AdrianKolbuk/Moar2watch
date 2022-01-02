@@ -3,23 +3,18 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var cors = require('cors');
 
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
 const sequelizeInit = require('./config/sequelize/init');
-sequelizeInit()
-  .catch(err => {
-    console.log(err);
-  });
-
-const session = require('express-session');
+const authApiRouter = require('./routes/api/AuthApiRoute');
 const userApiRouter = require('./routes/api/UserApiRoute');
 const titleLikeApiRouter = require('./routes/api/TitleLikeApiRoute');
 const titleWatchlistApiRouter = require('./routes/api/TitleWatchlistApiRoute');
-
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-
+const session = require('express-session');
 var app = express();
+var cors = require('cors');
+
 app.use(cors());
 
 // view engine setup
@@ -46,6 +41,7 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use('/api/auth', authApiRouter);
 app.use('/api/users', userApiRouter);
 app.use('/api/titleLikes', titleLikeApiRouter);
 app.use('/api/titleWatchlists', titleWatchlistApiRouter);
@@ -68,5 +64,11 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+sequelizeInit()
+  .catch(err => {
+    console.log(err);
+  });
+
 
 module.exports = app;
