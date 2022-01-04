@@ -37,6 +37,15 @@ exports.getTitleLikeById = (titleLikeId) => {
     });
 };
 
+exports.getTitleLikeByUserId = (titleLikeId) => {
+    return TitleLike.findByPk(titleLikeId, {
+        include: [{
+            model: User,
+            as: 'user'
+        }]
+    });
+};
+
 exports.createTitleLike = (data) => {
     console.log(JSON.stringify(data));
 

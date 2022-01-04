@@ -8,7 +8,6 @@ const TopAnimatedSeries = () => {
     const [titles, setTitles] = useState([]);
     const getTitleRequest = async () => {
 
-        const api_key = "k_8v24mym4";
         const url = `https://imdb-api.com/API/AdvancedSearch/k_8v24mym4?title_type=tv_series,tv_miniseries&genres=animation&count=100`
 
         const response = await fetch(url);

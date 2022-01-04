@@ -82,8 +82,8 @@ footer{
     background-color: #0942B2;
 }
 
-.card-div{
-
+#search-container{
+    min-height: 80vh;
 }
 
 .popular-movies > .row{
@@ -300,6 +300,39 @@ footer{
     padding: 0;
 }
 
-@media only screen and (max-width: 768px) {
-    
-  }
+.header-logout{
+    color: white;
+    font-size: large;
+    cursor: pointer;
+}
+
+.header-logout:hover{
+    color:grey
+}
+
+.search-form{
+    width: 100%;
+}
+
+.loading-span{
+    border: none;
+    border-radius: 5px;
+    background-color: #121313;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: large;
+    padding: 0.5rem 1rem;
+    width: 100%;
+}
+
+.loading-div{
+    width: fit-content;
+}
+
+.loading-message{
+    color: white;
+    font-size: large;
+    font-family: Cambria;
+}
+

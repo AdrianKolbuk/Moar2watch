@@ -1,6 +1,5 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Button, Card, Container, Col } from 'react-bootstrap'
 import AddIcon from '@mui/icons-material/Add';
 import ThumbUpAltOutlinedIcon from '@mui/icons-material/ThumbUpAltOutlined';
 
@@ -8,8 +7,8 @@ const TitleList = (props) => {
     return (
         <>
             {props.titles.map((title, index) => (
-                <div className='listItem'>
-                    <img className="poster" src={title.image} />
+                <div className='listItem' key={title.id}>
+                    <img className="poster" src={title.image} alt="Poster" />
                     <div className='itemInfo'>
                         <div className='icons'>
                             <AddIcon />

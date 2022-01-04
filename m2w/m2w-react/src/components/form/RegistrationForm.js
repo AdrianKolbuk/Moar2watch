@@ -1,6 +1,6 @@
 import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Button, Form, FormGroup } from 'react-bootstrap'
+import { Form, FormGroup } from 'react-bootstrap'
 import { Link, Redirect } from 'react-router-dom'
 import { checkRequired, checkTextLengthRange, checkEmail, checkConfirmPassword } from '../../helpers/validationCommon'
 import { addUserApiCall } from '../../apiCalls/userApiCalls'

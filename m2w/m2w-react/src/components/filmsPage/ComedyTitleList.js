@@ -8,7 +8,6 @@ const ComedyTitleList = () => {
 
     const getTitleRequest = async () => {
 
-        const pathname = window.location.pathname;
         const url = "https://imdb-api.com/API/AdvancedSearch/k_8v24mym4?title_type=feature,tv_movie&genres=comedy&count=100";
 
         const response = await fetch(url);

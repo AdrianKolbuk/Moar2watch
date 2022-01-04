@@ -7,7 +7,6 @@ const ActionAdventureTitleList = () => {
     const [titles, setTitles] = useState([]);
     const getTitleRequest = async () => {
 
-        const pathname = window.location.pathname;
         const url = "https://imdb-api.com/API/AdvancedSearch/k_8v24mym4?title_type=feature,tv_movie&genres=action,adventure&count=100";
 
         const response = await fetch(url);

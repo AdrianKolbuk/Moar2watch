@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react"
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Container, Row } from 'react-bootstrap'
 import TitleList from "../helpers/TitleList";
 import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined';
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
@@ -9,7 +8,6 @@ const SuperHeroMovies = () => {
     const [titles, setTitles] = useState([]);
     const getTitleRequest = async () => {
 
-        const api_key = "k_8v24mym4";
         const url = `https://imdb-api.com/en/API/IMDbList/k_8v24mym4/ls000097405`
 
         const response = await fetch(url);

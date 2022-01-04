@@ -8,7 +8,6 @@ const TopRCertifiedMovies = () => {
     const [titles, setTitles] = useState([]);
     const getTitleRequest = async () => {
 
-        const api_key = "k_8v24mym4";
         const url = `https://imdb-api.com/API/AdvancedSearch/k_8v24mym4?title_type=feature,tv_movie&certificates=us:R&count=100`
 
         const response = await fetch(url);

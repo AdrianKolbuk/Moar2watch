@@ -1,6 +1,6 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Button, Form, FormGroup } from 'react-bootstrap'
+import { Form } from 'react-bootstrap'
 
 function FormInput(props) {
     const className = props.error === '' ? '' : 'error-input'

@@ -32,7 +32,8 @@ export function updateUserApiCall(userId, user) {
     return promise;
 }
 
-// export function getEmployeeByIdApiCall(empId) {
-//     const emp = employeeDetailsList.find(emp => emp._id === empId)
-//     return emp;
-// }
+export function getUserByIdApiCall(userId) {
+    const url = `${usersBaseUrl}/${userId}`;
+    const promise = fetch(url);
+    return promise;
+}

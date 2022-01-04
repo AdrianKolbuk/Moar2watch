@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react"
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Container, Row } from 'react-bootstrap'
 import TitleList from "../helpers/TitleList";
 import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined';
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';

@@ -8,7 +8,6 @@ const FamilyTitleList = () => {
 
     const getTitleRequest = async () => {
 
-        const pathname = window.location.pathname;
         const url = "https://imdb-api.com/API/AdvancedSearch/k_8v24mym4?title_type=tv_series,tv_miniseries&genres=family&count=100";
 
         const response = await fetch(url);

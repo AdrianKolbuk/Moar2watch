@@ -39,6 +39,72 @@ class LoginForm extends React.Component {
         })
     }
 
+    handleSubmit = (event) => {
+        event.preventDefault()
+        const isValid = this.validateForm()
+        if (isValid) {
+            const user = this.state.user
+            let response
+            loginApiCall(user)
+                .then(res => {
+                    response = res
+                    return res.json()
+                })
+                .then(
+                    (data) => {
+                        if (response.status === 200) {
+                            if (data.token) {
+                                const userString = JSON.stringify(data)
+                                this.props.handleLogin(userString)
+                                this.props.history.goBack()
+                            }
+                        } else if (response.status === 401) {
+                            console.log(401)
+                            this.setState({ message: data.message })
+                        }
+                    },
+                    (error) => {
+                        this.setState({
+                            isLoaded: true,
+                            error
+                        })
+                    })
+        }
+    }
+
+    // handleSumbit = (event) => {
+    //     event.preventDefault()
+    //     const isValid = this.validateForm()
+    //     if (isValid) {
+    //         const user = this.state.user
+    //         let response
+    //         loginApiCall(user)
+    //             .then(res => {
+    //                 response = res
+    //                 return res.json()
+    //             })
+    //             .then(
+    //                 (data) => {
+    //                     if (response.status === 200) {
+    //                         if (data.token) {
+    //                             const userString = JSON.stringify(data)
+    //                             this.props.handleLogin(userString)
+    //                             this.props.history.goBack()
+    //                         }
+    //                     } else if (response.status === 401) {
+    //                         console.log(401)
+    //                         this.setState({ message: data.message })
+    //                     }
+    //                 },
+    //                 (error) => {
+    //                     this.setState({
+    //                         isLoaded: true,
+    //                         error
+    //                     })
+    //                 })
+    //     }
+    // }
+
     validateField = (fieldName, fieldValue) => {
         let errorMessage = ''
         if (fieldName === 'email') {
@@ -79,39 +145,6 @@ class LoginForm extends React.Component {
         return false
     }
 
-    handleSumbit = (event) => {
-        event.preventDefault()
-        const isValid = this.validateForm()
-        if (isValid) {
-            const user = this.state.user
-            let response
-            loginApiCall(user)
-                .then(res => {
-                    response = res
-                    return res.json()
-                })
-                .then(
-                    (data) => {
-                        if (response.status === 200) {
-                            if (data.token) {
-                                const userString = JSON.stringify(data)
-                                this.props.handleLogin(userString)
-                                this.props.history.goBack()
-                            }
-                        } else if (response.status === 401) {
-                            console.log(401)
-                            this.setState({ message: data.message })
-                        }
-                    },
-                    (error) => {
-                        this.setState({
-                            isLoaded: true,
-                            error
-                        })
-                    })
-        }
-    }
-
     render() {
         const errorsSummary = this.hasErrors() ? 'Form has errors' : ''
         const fetchError = this.state.error ? `Error: ${this.state.error.message}` : ''
@@ -119,62 +152,60 @@ class LoginForm extends React.Component {
 
         return (
             <div className="login-div">
-                <form method='post' onSubmit={this.handleSubmit}>
-                    <Form className="login-form">
-                        <h1 className="text-center">
-                            <img
-                                alt=""
-                                src="/img/logo_m2w.png"
-                                width="70"
-                                height="70"
-                                className="d-inline-block align-middle"
-                            />{' '}
-                            Moar2watch
-                        </h1>
-                        <h2 className="text-center">Welcome</h2>
+                <Form className="login-form" onSubmit={this.handleSubmit}>
+                    <h1 className="text-center">
+                        <img
+                            alt=""
+                            src="/img/logo_m2w.png"
+                            width="70"
+                            height="70"
+                            className="d-inline-block align-middle"
+                        />{' '}
+                        Moar2watch
+                    </h1>
+                    <h2 className="text-center">Welcome</h2>
 
-                        <FormGroup className="mb-3" controlId="formBasicEmail">
-                            <FormInput
-                                name="email"
-                                value={this.state.user.email}
-                                error={this.state.errors.email}
-                                placeholder="Enter email"
-                                label="Email"
-                                onChange={this.handleChange}
-                                type="text"
-                            />
-                        </FormGroup>
-
-                        <FormGroup className="mb-3" controlId="formBasicPassword">
-                            <FormInput
-                                type="password"
-                                label="Password"
-                                error={this.state.errors.password}
-                                name="password"
-                                placeholder="Enter password"
-                                onChange={this.handleChange}
-                                value={this.state.user.password}
-                            />
-                        </FormGroup>
-
-                        <LoginButton
-                            error={globalErrorMessage} submitButtonLabel="Login"
+                    <FormGroup className="mb-3" controlId="formBasicEmail">
+                        <FormInput
+                            name="email"
+                            value={this.state.user.email}
+                            error={this.state.errors.email}
+                            placeholder="Enter email"
+                            label="Email"
+                            onChange={this.handleChange}
+                            type="text"
                         />
+                    </FormGroup>
 
-                        <p className="text-center my-2">
-                            or
-                        </p>
+                    <FormGroup className="mb-3" controlId="formBasicPassword">
+                        <FormInput
+                            type="password"
+                            label="Password"
+                            error={this.state.errors.password}
+                            name="password"
+                            placeholder="Enter password"
+                            onChange={this.handleChange}
+                            value={this.state.user.password}
+                        />
+                    </FormGroup>
 
-                        <div className="d-flex justify-content-center">
-                            <Link to="/register" style={{ textDecoration: 'none', textAlign: "center", width: "fit-content" }}>
-                                <p className="register-p my-2">
-                                    Register
-                                </p>
-                            </Link>
-                        </div>
+                    <LoginButton
+                        error={globalErrorMessage} submitButtonLabel="Login"
+                    />
 
-                    </Form>
-                </form>
+                    <p className="text-center my-2">
+                        or
+                    </p>
+
+                    <div className="d-flex justify-content-center">
+                        <Link to="/register" style={{ textDecoration: 'none', textAlign: "center", width: "fit-content" }}>
+                            <p className="register-p my-2">
+                                Register
+                            </p>
+                        </Link>
+                    </div>
+
+                </Form>
             </div>
         )
     }

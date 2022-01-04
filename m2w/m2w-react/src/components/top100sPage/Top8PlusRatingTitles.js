@@ -8,7 +8,6 @@ const Top8PlusRatingTitles = () => {
     const [titles, setTitles] = useState([]);
     const getTitleRequest = async () => {
 
-        const api_key = "k_8v24mym4";
         const url = `https://imdb-api.com/API/AdvancedSearch/k_8v24mym4?title_type=feature,tv_movie,tv_series,tv_miniseries&user_rating=8.0,10&count=100`
 
         const response = await fetch(url);
