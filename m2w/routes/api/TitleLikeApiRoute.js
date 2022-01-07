@@ -4,10 +4,10 @@ const router = express.Router();
 const titleLikeApiController = require('../../api/TitleLikeAPI');
 const isAuth = require('../../middleware/isAuth');
 
-router.get('/', isAuth, titleLikeApiController.getTitleLikes);
-router.get('/:titleLikeId', isAuth, titleLikeApiController.getTitleLikeById);
-router.post('/', isAuth, titleLikeApiController.createTitleLike);
-router.put('/:TitleLikeId', isAuth, titleLikeApiController.updateTitleLike);
-router.delete('/:titleLikeId', isAuth, titleLikeApiController.deleteTitleLike);
+router.get('/', titleLikeApiController.getTitleLikes);
+router.get('/:titleLikeId', titleLikeApiController.getTitleLikeById);
+router.post('/', titleLikeApiController.createTitleLike);
+router.put('/:TitleLikeId', titleLikeApiController.updateTitleLike);
+router.delete('/:titleLikeId', titleLikeApiController.deleteTitleLike);
 
 module.exports = router;

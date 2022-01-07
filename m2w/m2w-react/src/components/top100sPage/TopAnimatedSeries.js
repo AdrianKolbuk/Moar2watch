@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import TitleList from "../helpers/TitleList";
 import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined';
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
+import { getUserByIdApiCall } from '../../apiCalls/userApiCalls'
+import { getCurrentUser, isAuthenticated } from '../../helpers/authHelper'
 
 const TopAnimatedSeries = () => {
     const [titles, setTitles] = useState([]);
@@ -13,13 +15,44 @@ const TopAnimatedSeries = () => {
         const response = await fetch(url);
         const responseJson = await response.json();
 
-        console.log(responseJson);
         setTitles(responseJson.results)
-
     }
 
     useEffect(() => {
         getTitleRequest();
+    }, []);
+
+    const [titleLikeIds, setTitleLikeIds] = useState([]);
+    const [titleWatchIds, setTitleWatchIds] = useState([]);
+    const [titleLikes, setTitleLikes] = useState([]);
+    const [titleWatches, setTitleWatches] = useState([]);
+    const gettitleLikeIdsRequest = async () => {
+        if (isAuthenticated()) {
+            var arrayLikeTitleIds = []
+            var arrayWatchTitleIds = []
+
+            const response = await getUserByIdApiCall(getCurrentUser().userId);
+            const responseJson = await response.json();
+
+            for (var k in responseJson.titleLikes) {
+                arrayLikeTitleIds.push(responseJson.titleLikes[k].title_id);
+            }
+
+            for (var m in responseJson.titleWatchlists) {
+                arrayWatchTitleIds.push(responseJson.titleWatchlists[m].title_id);
+            }
+
+            setTitleLikeIds(arrayLikeTitleIds)
+            setTitleWatchIds(arrayWatchTitleIds)
+            setTitleLikes(responseJson.titleLikes)
+            setTitleWatches(responseJson.titleWatchlists)
+        }
+    }
+
+    useEffect(() => {
+        if (isAuthenticated()) {
+            gettitleLikeIdsRequest();
+        }
     }, []);
 
     const [slideNumber, setSlideNumber] = useState(0);
@@ -35,11 +68,11 @@ const TopAnimatedSeries = () => {
 
         if (direction === "arrow-back" && slideNumber > 0) {
             setSlideNumber(slideNumber - 1);
-            listRef.current.style.transform = `translateX(${170 + distance}px)`
+            listRef.current.style.transform = `translateX(${180 + distance}px)`
         }
         if (direction === "arrow-forward" && slideNumber < 100) {
             setSlideNumber(slideNumber + 1);
-            listRef.current.style.transform = `translateX(${-170 + distance}px)`
+            listRef.current.style.transform = `translateX(${-180 + distance}px)`
         }
     }
 
@@ -54,7 +87,7 @@ const TopAnimatedSeries = () => {
                     fontSize='large'
                 />
                 <div className="containerr" ref={listRef}>
-                    <TitleList titles={titles} />
+                    <TitleList titles={titles} titleLikeIds={titleLikeIds} titleWatchIds={titleWatchIds} titleLikes={titleLikes} titleWatches={titleWatches} />
                 </div>
                 <ArrowForwardIosOutlinedIcon
                     className="arrow-forward"

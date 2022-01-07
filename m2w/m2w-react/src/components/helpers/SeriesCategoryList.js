@@ -42,54 +42,44 @@ const SeriesCategoryList = () => {
                     <Link to="/series/drama" style={{ textDecoration: 'none', color: "white" }}>
                         <div className='category-listItem'>
                             <img className="category-img" src="/img/obyczajowy.png" alt="Drama" />
-                            <div className='itemInfo'>
                                 <div className='category-itemInfoTop'>
                                     <span>Drama</span>
                                 </div>
-                            </div>
                         </div>
                     </Link>
 
                     <Link to="/series/scifi_fantasy" style={{ textDecoration: 'none', color: "white" }}>
                         <div className='category-listItem'>
                             <img className="category-img" src="/img/sci-fi_fantasy.png" alt="Scifi-fantasy" />
-                            <div className='itemInfo'>
                                 <div className='category-itemInfoTop'>
                                     <span>Sci-fi, Fantasy</span>
                                 </div>
-                            </div>
                         </div>
                     </Link>
 
                     <Link to="/series/thriller_horror" style={{ textDecoration: 'none', color: "white" }}>
                         <div className='category-listItem'>
                             <img className="category-img" src="/img/Thriller_horror.png" alt="Thriller-horror" />
-                            <div className='itemInfo'>
                                 <div className='category-itemInfoTop'>
                                     <span>Thriller, Horror</span>
                                 </div>
-                            </div>
                         </div>
                     </Link>
 
                     <Link to="/series/action_adventure" style={{ textDecoration: 'none', color: "white" }}>
                         <div className='category-listItem'>
                             <img className="category-img" src="/img/akcja_przygodowy.png" alt="Action-adventure" />
-                            <div className='itemInfo'>
                                 <div className='category-itemInfoTop'>
                                     <span>Action, adventure</span>
                                 </div>
-                            </div>
                         </div>
                     </Link>
 
                     <Link to="/series/romance" style={{ textDecoration: 'none', color: "white" }}>
                         <div className='category-listItem'>
                             <img className="category-img" src="/img/romantyczne.png" alt="Romance" />
-                            <div className='itemInfo'>
-                                <div className='category-itemInfoTop'>
-                                    <span>Romance</span>
-                                </div>
+                            <div className='category-itemInfoTop'>
+                                <span>Romance</span>
                             </div>
                         </div>
                     </Link>
@@ -97,10 +87,8 @@ const SeriesCategoryList = () => {
                     <Link to="/series/comedy" style={{ textDecoration: 'none', color: "white" }}>
                         <div className='category-listItem'>
                             <img className="category-img" src="/img/komedia.png" alt="Comedy" />
-                            <div className='itemInfo'>
-                                <div className='category-itemInfoTop'>
-                                    <span>Comedy</span>
-                                </div>
+                            <div className='category-itemInfoTop'>
+                                <span>Comedy</span>
                             </div>
                         </div>
                     </Link>
@@ -108,10 +96,8 @@ const SeriesCategoryList = () => {
                     <Link to="/series/criminal" style={{ textDecoration: 'none', color: "white" }}>
                         <div className='category-listItem'>
                             <img className="category-img" src="/img/kryminalny.png" alt="Criminal" />
-                            <div className='itemInfo'>
-                                <div className='category-itemInfoTop'>
-                                    <span>Criminal</span>
-                                </div>
+                            <div className='category-itemInfoTop'>
+                                <span>Criminal</span>
                             </div>
                         </div>
                     </Link>
@@ -119,10 +105,8 @@ const SeriesCategoryList = () => {
                     <Link to="/series/family" style={{ textDecoration: 'none', color: "white" }}>
                         <div className='category-listItem'>
                             <img className="category-img" src="/img/familijne.png" alt="Family" />
-                            <div className='itemInfo'>
-                                <div className='category-itemInfoTop'>
-                                    <span>Family</span>
-                                </div>
+                            <div className='category-itemInfoTop'>
+                                <span>Family</span>
                             </div>
                         </div>
                     </Link>
@@ -130,10 +114,8 @@ const SeriesCategoryList = () => {
                     <Link to="/series/documentary" style={{ textDecoration: 'none', color: "white" }}>
                         <div className='category-listItem'>
                             <img className="category-img" src="/img/dokumentalny.png" alt="Documentary" />
-                            <div className='itemInfo'>
-                                <div className='category-itemInfoTop'>
-                                    <span>Documentary</span>
-                                </div>
+                            <div className='category-itemInfoTop'>
+                                <span>Documentary</span>
                             </div>
                         </div>
                     </Link>
@@ -141,10 +123,8 @@ const SeriesCategoryList = () => {
                     <Link to="/series/musical" style={{ textDecoration: 'none', color: "white" }}>
                         <div className='category-listItem'>
                             <img className="category-img" src="/img/muzyczny.png" alt="Musical" />
-                            <div className='itemInfo'>
-                                <div className='category-itemInfoTop'>
-                                    <span>Musical</span>
-                                </div>
+                            <div className='category-itemInfoTop'>
+                                <span>Musical</span>
                             </div>
                         </div>
                     </Link>
